@@ -88,6 +88,7 @@
     getElements(){
       const thisProduct = this;
 
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
@@ -182,11 +183,20 @@
         if (checkDefault == true) {
           // reduce price variable
           price -= option.price;
+          thisProduct.imageWrapper.classList.remove(classNames.menuProduct.imageVisible);
+          }
+        }
+        const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+
+        if (optionImage) {
+          if (optionSelected) {
+            optionImage.classList.add(classNames.menuProduct.imageVisible);
+          } else {
+            optionImage.classList.remove(classNames.menuProduct.imageVisible);
           }
         }
       }
     }
-
     // update calculated price in the HTML
     thisProduct.priceElem.innerHTML = price;
     }
