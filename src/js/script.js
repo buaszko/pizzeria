@@ -1,6 +1,5 @@
 /* eslint-disable no-dupe-class-members */
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
-/* eslint-disable */
 
 {
   'use strict';
@@ -97,10 +96,8 @@
   class Product{
     constructor(id, data){
       const thisProduct = this;
-
       thisProduct.id = id;
       thisProduct.data = data;
-
       thisProduct.renderInMenu();
       thisProduct.getElements();
       thisProduct.initAccordion();
@@ -123,7 +120,6 @@
 
       /* add element to menu */
       menuContainer.appendChild(thisProduct.element);
-
     }
 
     getElements(){
@@ -263,7 +259,6 @@
       productSummary.priceSingle = thisProduct.priceSingle;
       productSummary.price = thisProduct.priceSingle * thisProduct.amountWidget.value;
       productSummary.params = thisProduct.prepareCartProductParams();
-
       return productSummary;
     }
 
@@ -288,7 +283,6 @@
       }
       return params;
     }
-
   }
 
   class AmountWidget {
@@ -306,7 +300,6 @@
       thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
       thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
       thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
-
     }
 
     setValue(value) {
@@ -522,7 +515,6 @@
       };
     }
   }
-
 
   const app = {
 
