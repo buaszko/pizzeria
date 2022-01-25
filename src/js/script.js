@@ -413,6 +413,7 @@
         body: JSON.stringify(payload),
       };
       fetch(url, options);
+      alert('Zamowienie zostalo zlozone');
     }
 
     update() {
@@ -537,7 +538,6 @@
           return rawResponse.json();
         })
         .then(function (parsedResponse) {
-          alert('alert test');
           /* save parsedResponse as thisApp.data.products */
           thisApp.data.products = parsedResponse;
           /* execute initMenu method */
