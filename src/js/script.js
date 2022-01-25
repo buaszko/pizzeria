@@ -246,6 +246,7 @@
     addToCart() {
       const thisProduct = this;
       app.cart.add(thisProduct.prepareCartProduct());
+      alert("Produkt dodany do koszyka");
     }
 
     prepareCartProduct() {
@@ -290,7 +291,6 @@
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
-      console.log('AmountWidget:', thisWidget);
     }
 
     getElements(element) {
@@ -405,6 +405,7 @@
       };
       for (let prod of thisCart.products) {
         payload.products.push(prod.getData());
+        alert("Zamówienie zostało złożone");
       }
       const options = {
         method: 'POST',
@@ -514,6 +515,7 @@
         priceSingle: thisCartProduct.priceSingle,
         params: thisCartProduct.params,
       };
+      return thisCartProduct.simpleData;
     }
   }
 
